@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <drawable name="progress_draw">#25D880</drawable>
+    <drawable name="translate">#00000000</drawable>
+    <drawable name="white">#ffffff</drawable>
+    <drawable name="gray">#E6E6E6</drawable>
+
+    <drawable name="auth_progress_draw">#20b9ac</drawable>
+
+</resources>

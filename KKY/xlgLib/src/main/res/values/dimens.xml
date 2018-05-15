@@ -1,0 +1,42 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- padding边距 -->
+    <dimen name="common_padding_top">25dp</dimen>
+    <!-- padding边距 -->
+    <dimen name="common_padding_left_right">10dp</dimen>
+    <!-- 菜单右边字体大小 -->
+    <dimen name="common_menu_title">13dp</dimen>
+
+    <!-- 菜单中间字体大小 -->
+    <dimen name="common_menu_title_center">17dp</dimen>
+
+    <!-- 页面里面菜单通用字体大小 -->
+    <dimen name="common_menu_text_size">16dp</dimen>
+
+    <!-- item高度 55dp-->
+    <dimen name="common_item_height">65dp</dimen>
+
+    <!-- holder高度 -->
+    <dimen name="common_holder_height">30dp</dimen>
+
+    <!-- editText 左边距padding -->
+    <dimen name="common_edit_left_padding">17dp</dimen>
+
+    <!-- editText Item高度 -->
+    <dimen name="common_edit_item_height">58dp</dimen>
+
+    <!-- title bar 高度 -->
+    <dimen name="height_top_bar">50dp</dimen>
+
+    <!-- title bar shade 高度 -->
+    <dimen name="height_top_bar_shade1">53dp</dimen>
+
+    <dimen name="banner_heigth">260dp</dimen>
+
+    <string name="recorder_normal">按住 说话</string>
+    <string name="recorder_recording">松开 手指</string>
+    <string name="recorder_want_cancel">松开手指，取消发送</string>
+</resources>

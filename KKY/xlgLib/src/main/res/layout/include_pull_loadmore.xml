@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.widget.pullview.LoadMoreView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/moreview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <include layout="@layout/include_pull_foot" />
+
+</android.support.widget.pullview.LoadMoreView>

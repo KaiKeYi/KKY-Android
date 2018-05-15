@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="app_theme_color">#25d880</color>
+    <color name="app_bg">#f6f6f6</color>
+    <color name="app_title_bg">#fff</color>
+    <color name="app_title_color">#030303</color>
+    <color name="error_item_color">#E6E6E6</color>
+    <color name="transparent">#00ffffff</color>"
+
+    <color name="bottom_hightlight">#5025D880</color>
+    <color name="bottom_normal">#25d880</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="color_E6FF8476">#E6FF8476</color>
+    <color name="color_9f9f9f">#9F9F9F</color>
+    <color name="color_normal">#25D880</color>
+    <color name="color_E7EDEA">#E7EDEA</color>
+    <color name="color_FCFCFC">#FCFCFC</color>
+    <color name="color_808080">#808080</color>
+    <color name="color_aaaaaa">#AAAAAA</color>
+</resources>

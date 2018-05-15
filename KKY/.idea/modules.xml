@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KKY.iml" filepath="$PROJECT_DIR$/KKY.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xlgLib/xlgLib.iml" filepath="$PROJECT_DIR$/xlgLib/xlgLib.iml" />
     </modules>
   </component>
 </project>

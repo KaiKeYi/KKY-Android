@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rv_pop_dialog"
+   android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#40000000"
+     android:clickable="true">
+
+   <LinearLayout
+        android:id="@+id/lay_pop_dialog"
+        android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_bg" >
+
+        <include layout="@layout/include_listview_divider"/>
+
+        <TextView
+            android:id="@+id/tv_cancel_pop_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginTop="6dp"
+            android:text="取消"
+            android:clickable="true"
+            android:textColor="#525252"
+            android:textSize="16dp" 
+            android:background="@drawable/selector_item_white_bg"/>
+    </LinearLayout>
+
+</RelativeLayout>
