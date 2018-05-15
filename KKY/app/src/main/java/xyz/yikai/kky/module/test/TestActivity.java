@@ -1,7 +1,9 @@
 package xyz.yikai.kky.module.test;
 
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.xlg.library.helper.AppHelper;
@@ -12,7 +14,6 @@ import com.xlg.library.utils.Utils;
 
 import java.util.ArrayList;
 
-import xyz.yikai.kky.base.BaseActivity;
 import xyz.yikai.kky.config.CacheConfig;
 
 /**
@@ -20,7 +21,7 @@ import xyz.yikai.kky.config.CacheConfig;
  * @Time: 2018/4/24 15:37
  * @Description:测试工具类
  */
-public class TestActivity extends BaseActivity {
+public class TestActivity extends ListActivity {
 
     private ArrayList<String> titles;
 
@@ -37,7 +38,7 @@ public class TestActivity extends BaseActivity {
         titles.add("获取当前Activity");//6
         titles.add("接口请求Post");//7
 
-//        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, titles));
+        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, titles));
     }
 
     protected void onListItemClick(ListView l, View v, int position, long id) {

@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -14,13 +15,12 @@ import com.xlg.library.base.SupFragment;
 import com.xlg.library.helper.AppHelper;
 import com.xlg.library.service.IServiceManager;
 import com.xlg.library.service.ServiceProvider;
-import com.xlg.library.swiper.SwipeBackActivity;
 import com.xlg.library.utils.SystemBarTintManager;
 import com.xlg.library.view.ProgressLoadView;
 
 import xyz.yikai.kky.R;
 
-public class SuperActivity extends SwipeBackActivity {
+public class SuperActivity extends FragmentActivity {
 
     protected ProgressLoadView loadingView;
 
