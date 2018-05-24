@@ -1,12 +1,14 @@
 package xyz.yikai.kky.web;
 
 import com.xlg.library.base.BaseApp;
-import com.xlg.library.utils.CommonUtil;
+import com.xlg.library.network.NetworkUtil;
 import com.xlg.library.utils.ToastUtil;
+
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+
 import xyz.yikai.kky.config.CacheConfig;
 import xyz.yikai.kky.helper.UserHelper;
 
@@ -40,7 +42,7 @@ public class RequestWebHelper {
      */
     public void requestGet(IRequestResultListener rListener, String url, Map<String, String> params, ActionType...tag) {
 
-        if (!CommonUtil.isNetworkAvailable(BaseApp.getAppContext()) && isCanMotitor) {
+        if (!NetworkUtil.isNetworkAvailable(BaseApp.getAppContext()) && isCanMotitor) {
             isCanMotitor = false;
             rListener.onFail(netWrong, tag);
             ToastUtil.getInstance().showToast(netWrong); //错误信息toast
@@ -64,7 +66,7 @@ public class RequestWebHelper {
     public void requestPost(IRequestResultListener rListener, String url, Map<String, String> params,
                             ActionType...tag) {
 
-        if (!CommonUtil.isNetworkAvailable(BaseApp.getAppContext()) && isCanMotitor) {
+        if (!NetworkUtil.isNetworkAvailable(BaseApp.getAppContext()) && isCanMotitor) {
             isCanMotitor = false;
             rListener.onFail(netWrong, tag);
             ToastUtil.getInstance().showToast(netWrong); //错误信息toast

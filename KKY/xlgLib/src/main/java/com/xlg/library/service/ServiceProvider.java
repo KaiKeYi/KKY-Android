@@ -6,8 +6,9 @@ package com.xlg.library.service;
  * @Description:
  */
 public class ServiceProvider {
+
     private static ServiceProvider _instance = null;
-    private IServiceManager mServiceManager = null;
+    private SuperServiceManager mServiceManager = null;
 
     private ServiceProvider() {
     }
@@ -20,11 +21,11 @@ public class ServiceProvider {
         return _instance;
     }
 
-    public void registServiceManager(IServiceManager sensor) {
+    public void registServiceManager(SuperServiceManager sensor) {
         this.mServiceManager = sensor;
     }
 
-    public IServiceManager getServiceManager() {
+    public SuperServiceManager getServiceManager() {
         return this.mServiceManager;
     }
 }

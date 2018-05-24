@@ -9,8 +9,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Typeface;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -41,66 +39,6 @@ public class CommonUtil {
         Typeface type = Typeface.createFromAsset(BaseApp.getAppContext().getAssets(), "font/avanti_bold.ttf");
         textView.setTypeface(type);
     }
-
-    /**
-     * 判断网络状态
-     */
-    public static boolean isNetworkAvailable(Context context) {
-        if (context == null)
-            return false;
-        try {
-            ConnectivityManager connectivity = (ConnectivityManager) context
-                    .getSystemService(Context.CONNECTIVITY_SERVICE);
-            if (connectivity != null) {
-                NetworkInfo[] info = connectivity.getAllNetworkInfo();
-                if (info != null) {
-                    for (int i = 0; i < info.length; i++) {
-                        if (info[i].getState() == NetworkInfo.State.CONNECTED) {
-                            return true;
-                        }
-                    }
-                }
-            }
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
-    /**
-     * 判断是否是wifi
-     */
-    public static boolean isWIFI(Context mContext) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) mContext
-                .getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
-        if (activeNetInfo != null
-                && activeNetInfo.getType() == ConnectivityManager.TYPE_WIFI) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * 获取当前网络连接的类型信息
-     *
-     * @param context
-     * @return 1 WiFi 0 普通网络 -1 无网络
-     */
-    public static int getConnectedType(Context context) {
-        if (context != null) {
-            ConnectivityManager mConnectivityManager = (ConnectivityManager) context
-                    .getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo mNetworkInfo = mConnectivityManager
-                    .getActiveNetworkInfo();
-            if (mNetworkInfo != null && mNetworkInfo.isAvailable()) {
-                return mNetworkInfo.getType();
-            }
-        }
-        return -1;
-    }
-
 
     /**
      * 是否是数字
@@ -447,7 +385,6 @@ public class CommonUtil {
             }
 
         } catch (Exception e) {
-            LogUtil.e(e.toString());
         }
 
         return null;
@@ -479,7 +416,6 @@ public class CommonUtil {
             }
 
         } catch (Exception e) {
-            LogUtil.e(e.toString());
         }
     }
 

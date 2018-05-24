@@ -15,7 +15,9 @@ public class PhoneRegularUtil {
     }
 
     public static void setTextChange(final EditText phoneEditText) {
+
         phoneEditText.addTextChangedListener(new TextWatcher() {
+
             private String oldData = "";
             int selectionIdx;
             boolean isChanged = false;

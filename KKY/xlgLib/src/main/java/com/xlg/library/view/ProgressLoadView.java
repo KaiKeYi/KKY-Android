@@ -26,6 +26,9 @@ import com.xlg.library.utils.UiThreadHandler;
 
 import java.util.Random;
 
+/**
+ * 类似网页加载进度条
+ */
 public class ProgressLoadView extends ProgressBar {
 
 	private Drawable m_indicator;
@@ -37,8 +40,14 @@ public class ProgressLoadView extends ProgressBar {
 
 	private int progress = 0;
 	private Message message;
+	/**
+	 * The Is can invok.
+	 */
 	boolean isCanInvok = true;
 
+	/**
+	 * The Randle.
+	 */
 	Random randle = new Random();
 
 	private Handler handler = new Handler() {
@@ -72,6 +81,11 @@ public class ProgressLoadView extends ProgressBar {
 	};
 
 
+	/**
+	 * Start loading.
+	 *
+	 * @param isCovered the is covered
+	 */
 	public void startLoading(boolean ... isCovered) {
 
 		if (isCovered.length > 0 && isCovered[0]) {
@@ -101,8 +115,12 @@ public class ProgressLoadView extends ProgressBar {
 		setVisibility(View.VISIBLE);
 	}
 
+	/**
+	 * Hide progress.
+	 *
+	 * @param timeOut the time out
+	 */
 	protected void hideProgress(int timeOut) {
-
 
 		AlphaAnimation myAnimation_Alpha = new AlphaAnimation(1.0f, 0f);
 		myAnimation_Alpha.setDuration(timeOut);
@@ -117,23 +135,12 @@ public class ProgressLoadView extends ProgressBar {
 				digestCoverView();
 			}
 		}, timeOut);
-
-//		handler.postDelayed(new Runnable() {
-//
-//			@Override
-//			public void run() {
-//
-//				setVisibility(View.INVISIBLE);
-//
-//				digestCoverView();
-//			}
-//		}, timeOut);
 	}
 
 	/**
-	 * 
-	 * @param isOnSucc
-	 *            表示是否请求成功 onSucc、onFailure
+	 * Stop loading.
+	 *
+	 * @param isOnSucc 表示是否请求成功 onSucc、onFailure
 	 */
 	public void stopLoading(boolean isOnSucc) {
 
@@ -147,7 +154,6 @@ public class ProgressLoadView extends ProgressBar {
 		} else {
 			hideProgress(300);
 		}
-
 	}
 
 	private void digestCoverView() {
@@ -157,6 +163,9 @@ public class ProgressLoadView extends ProgressBar {
         }
 	}
 
+	/**
+	 * The Runnable.
+	 */
 	Runnable runnable = new Runnable() {
 
 		@Override
@@ -180,14 +189,32 @@ public class ProgressLoadView extends ProgressBar {
 		}
 	};
 
+	/**
+	 * Instantiates a new Progress load view.
+	 *
+	 * @param context the context
+	 */
 	public ProgressLoadView(Context context) {
 		this(context, null);
 	}
 
+	/**
+	 * Instantiates a new Progress load view.
+	 *
+	 * @param context the context
+	 * @param attrs   the attrs
+	 */
 	public ProgressLoadView(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
 	}
 
+	/**
+	 * Instantiates a new Progress load view.
+	 *
+	 * @param context  the context
+	 * @param attrs    the attrs
+	 * @param defStyle the def style
+	 */
 	public ProgressLoadView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 
@@ -243,33 +270,74 @@ public class ProgressLoadView extends ProgressBar {
 		}
 	}
 
+	/**
+	 * Sets progress indicator.
+	 *
+	 * @param indicator the indicator
+	 */
 	public void setProgressIndicator(Drawable indicator) {
 		m_indicator = indicator;
 	}
 
+	/**
+	 * Sets text formatter.
+	 *
+	 * @param formatter the formatter
+	 */
 	public void setTextFormatter(Formatter formatter) {
 		m_formatter = formatter;
 	}
 
+	/**
+	 * Sets offset.
+	 *
+	 * @param offset the offset
+	 */
 	public void setOffset(int offset) {
 		m_offset = offset;
 	}
 
+	/**
+	 * Sets text color.
+	 *
+	 * @param color the color
+	 */
 	public void setTextColor(int color) {
 		m_textPaint.setColor(color);
 	}
 
+	/**
+	 * Sets text size.
+	 *
+	 * @param size the size
+	 */
 	public void setTextSize(float size) {
 		m_textPaint.setTextSize(size);
 	}
 
+	/**
+	 * Sets text bold.
+	 *
+	 * @param bold the bold
+	 */
 	public void setTextBold(boolean bold) {
 		m_textPaint.setFakeBoldText(true);
 	}
 
+	/**
+	 * Sets text align.
+	 *
+	 * @param align the align
+	 */
 	public void setTextAlign(Align align) {
 		m_textPaint.setTextAlign(align);
 	}
+
+	/**
+	 * Sets paint.
+	 *
+	 * @param paint the paint
+	 */
 	public void setPaint(TextPaint paint) {
 		m_textPaint = paint;
 	}
@@ -404,12 +472,19 @@ public class ProgressLoadView extends ProgressBar {
 						+ (int) (width * scale + 0.5f);
 				progressBar.setBounds(progressBarBounds);
 			}
-
-
 		}
 	}
 
+	/**
+	 * The interface Formatter.
+	 */
 	public interface Formatter {
+		/**
+		 * Gets text.
+		 *
+		 * @param progress the progress
+		 * @return the text
+		 */
 		public String getText(int progress);
 	}
 

@@ -2,10 +2,7 @@ package com.xlg.library.helper;
 
 import android.app.Activity;
 import android.text.TextUtils;
-
 import com.xlg.library.cache.SharePreferences;
-import com.xlg.library.database.DataBaseManager;
-
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 
@@ -70,12 +67,12 @@ public class AppHelper {
      */
     public void exitAppClearData() {
         SharePreferences.clear();
-        DataBaseManager.getDataBaseManager().clearDefaultDB();
         clearActivitys();
 
         //有推送的话，该方法可能会断掉进程
         System.exit(0);
     }
+
     /**
      * 退出app,清空数据
      */

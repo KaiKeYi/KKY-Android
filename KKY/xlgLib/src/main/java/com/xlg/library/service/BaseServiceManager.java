@@ -7,7 +7,8 @@ import java.util.HashMap;
  * @Time: 2018/4/19 10:59
  * @Description:
  */
-public class BaseServiceManager implements IServiceManager {
+public class BaseServiceManager implements SuperServiceManager {
+
     private HashMap<String, Object> mServices = new HashMap();
 
     public BaseServiceManager() {

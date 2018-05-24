@@ -1,15 +1,14 @@
 package com.xlg.library.utils;
 
 import android.util.Log;
-
 import com.xlg.library.BuildConfig;
-
 import java.util.Locale;
 
 /**
- * Created by Jason on 2017/8/29.
+ * @Author: Jason
+ * @Time: 2018/4/24 17:05
+ * @Description:日志打印工具，线上不打印
  */
-
 public class LogUtil {
 
     public static final boolean isDebug() {

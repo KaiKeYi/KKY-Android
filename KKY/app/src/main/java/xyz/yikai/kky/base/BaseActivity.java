@@ -16,14 +16,11 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.xlg.library.base.BaseFragment;
-import com.xlg.library.base.SupFragment;
 import com.xlg.library.dialog.CommonDialog;
 import com.xlg.library.dialog.PopDialog;
 import com.xlg.library.dialog.ShapeDialog;
-import com.xlg.library.receiver.NetBroadCastReciver;
+import com.xlg.library.network.NetBroadCastReciver;
 import com.xlg.library.utils.WindowUtil;
-import com.xlg.library.view.listener.IBaseViewListener;
 
 import xyz.yikai.kky.BuildConfig;
 import xyz.yikai.kky.R;
@@ -33,8 +30,8 @@ import xyz.yikai.kky.R;
  * @Time: 2018/4/19 10:54
  * @Description:基类Activity
  */
-public class BaseActivity extends SuperActivity implements IBaseViewListener,
-        NetBroadCastReciver.INetRevicerListener, SupFragment.ITitleListener {
+public class BaseActivity extends SuperActivity implements BaseViewListener,
+        NetBroadCastReciver.INetRevicerListener, SuperFragment.ITitleListener {
 
     /**
      * 网络监听器

@@ -17,8 +17,10 @@ import java.util.ArrayList;
 import xyz.yikai.kky.config.CacheConfig;
 
 /**
+ * The type Test activity.
+ *
  * @Author: Jason
- * @Time: 2018/4/24 15:37
+ * @Time: 2018 /4/24 15:37
  * @Description:测试工具类
  */
 public class TestActivity extends ListActivity {
@@ -41,6 +43,7 @@ public class TestActivity extends ListActivity {
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, titles));
     }
 
+    
     protected void onListItemClick(ListView l, View v, int position, long id) {
         switch (position) {
             case 1:

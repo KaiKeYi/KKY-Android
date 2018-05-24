@@ -16,15 +16,17 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.xlg.library.cache.SharePreferences;
 import com.xlg.library.utils.LogUtil;
 import com.xlg.library.utils.ToastUtil;
 import com.xlg.library.utils.Utils;
 import com.xlg.library.utils.WindowUtil;
 import com.xlg.library.web.HTTPSTrustManager;
-import com.google.gson.Gson;
+
 import java.util.HashMap;
 import java.util.Map;
+
 import xyz.yikai.kky.BuildConfig;
 
 /**

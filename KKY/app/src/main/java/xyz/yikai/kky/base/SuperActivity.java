@@ -11,9 +11,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.xlg.library.base.SupFragment;
 import com.xlg.library.helper.AppHelper;
-import com.xlg.library.service.IServiceManager;
+import com.xlg.library.service.SuperServiceManager;
 import com.xlg.library.service.ServiceProvider;
 import com.xlg.library.utils.SystemBarTintManager;
 import com.xlg.library.view.ProgressLoadView;
@@ -58,7 +57,7 @@ public class SuperActivity extends FragmentActivity {
 
     @Override
     public Object getSystemService(String name) {
-        IServiceManager manager = ServiceProvider.getServiceProvider()
+        SuperServiceManager manager = ServiceProvider.getServiceProvider()
                 .getServiceManager();
         if (manager != null) {
             Object serivce = manager.getService(name);
@@ -91,7 +90,7 @@ public class SuperActivity extends FragmentActivity {
      *
      * @param listener
      */
-    protected void setTitle(final SupFragment.ITitleListener listener, String... param) {
+    protected void setTitle(final SuperFragment.ITitleListener listener, String... param) {
 
         findViewById(R.id.backBtn).setOnClickListener(new OnClickListener() {
 

@@ -875,7 +875,6 @@ public class Utils {
         c.setTime(date);
         int today = c.get(Calendar.DAY_OF_WEEK);
         c.add(Calendar.DAY_OF_WEEK, -today + Calendar.MONDAY);
-        LogUtil.i(simpleDateFormat.format(c.getTime()));
         return simpleDateFormat.format(c.getTime());
     }
 
