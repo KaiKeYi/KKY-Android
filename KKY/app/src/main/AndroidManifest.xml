@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme">
-        <meta-data
-            android:name="KKY_CHANNLE"
-            android:value="${KKY_CHANNLE_ID}" />
         <activity android:name=".module.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

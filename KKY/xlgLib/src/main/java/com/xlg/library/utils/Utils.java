@@ -326,30 +326,6 @@ public class Utils {
     }
 
     /**
-     * 获取渠道号
-     */
-    public static String getChannelID() {
-        String channels = "";
-        try {
-            Context ctx = BaseApp.getAppContext();
-            ApplicationInfo appInfo = ctx.getPackageManager().getApplicationInfo(ctx.getPackageName(), PackageManager.GET_META_DATA);
-            int chan = appInfo.metaData.getInt("RENTALCAR_CHANNLE");
-            if (chan == 1) {
-                channels = "1001";
-            } else {
-                channels = chan + "";
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-
-        if (TextUtils.isEmpty(channels)) {
-            channels = "1001";
-        }
-        return channels;
-
-    }
-
-    /**
      * 是否符合正则
      */
     public static boolean regexMatcher(String content, String matcher, int minLen, int maxLen) {
