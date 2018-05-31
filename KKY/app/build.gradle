@@ -2,6 +2,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'walle'
 
 android {
+
+    dexOptions {
+        dexInProcess true
+        preDexLibraries true
+        javaMaxHeapSize "6g"//越大越好
+    }
+
     compileSdkVersion 27
     defaultConfig {
         applicationId "xyz.yikai.kky"
@@ -57,4 +64,5 @@ dependencies {
 
     //如果不需要通过walle获取渠道号 则不需要加
     implementation 'com.meituan.android.walle:library:1.1.6'
+    implementation 'com.github.leibnik:WechatRadioBar:1.2'
 }

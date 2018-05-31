@@ -5,3 +5,8 @@ baidu # 百度
 xiaomi # 小米
 meizu # 魅族
 samsungapps # 三星
+
+# walle打包命令：
+# ./gradlew clean assembleReleaseChannels -PchannelList=official  //生成单个渠道包
+# ./gradlew clean assembleReleaseChannels -PchannelList=official,tencent  //生成多个渠道包
+# ./gradlew clean assembleReleaseChannels  //生成全部渠道包
