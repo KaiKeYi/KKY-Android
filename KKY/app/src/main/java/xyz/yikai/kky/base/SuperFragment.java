@@ -107,12 +107,12 @@ public class SuperFragment extends Fragment implements
     }
 
 
-    public void onSuccess(BaseLinearLayout mView) {
+    public void onSuccess(BaseView mView) {
         mView.stopLoading(true);
 
     }
 
-    public void onFailure(String content, BaseLinearLayout mView) {
+    public void onFailure(String content, BaseView mView) {
         if (content!=null && !TextUtils.isEmpty(content)){
             ToastUtil.getInstance().showToast(content);
         }

@@ -6,14 +6,14 @@ import android.util.AttributeSet;
 import com.xlg.library.widget.pullview.PullListView;
 import com.xlg.library.widget.pullview.PullToRefreshLayout;
 
-public abstract class SuperLinearlayout extends android.widget.LinearLayout {
+public abstract class SuperView extends android.widget.LinearLayout {
 
-    public SuperLinearlayout(Context context) {
+    public SuperView(Context context) {
         super(context);
         initTitleParams();
     }
 
-    public SuperLinearlayout(Context context, @Nullable AttributeSet attrs) {
+    public SuperView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 

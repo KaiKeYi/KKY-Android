@@ -22,6 +22,11 @@ import com.xlg.library.dialog.ShapeDialog;
 import com.xlg.library.network.NetBroadCastReciver;
 import com.xlg.library.utils.WindowUtil;
 
+import android.graphics.Color;
+import android.os.Build;
+import android.view.Window;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
+
 import xyz.yikai.kky.BuildConfig;
 import xyz.yikai.kky.R;
 
@@ -55,6 +60,18 @@ public class BaseActivity extends SuperActivity implements BaseViewListener,
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         getDisplay();
+
+//        // 4.4及以上版本开启
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            setTranslucentStatus(true);
+//        }
+//
+//        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+//        tintManager.setStatusBarTintEnabled(true);
+//        tintManager.setNavigationBarTintEnabled(true);
+//
+//        // 自定义颜色
+//        tintManager.setTintColor(Color.parseColor("#FF0000"));
     }
 
     private void getDisplay() {
@@ -66,6 +83,18 @@ public class BaseActivity extends SuperActivity implements BaseViewListener,
         height = metrics.heightPixels;
     }
 
+    private void setTranslucentStatus(boolean on) {
+        Window win = getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
+        }
+        win.setAttributes(winParams);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -73,7 +102,7 @@ public class BaseActivity extends SuperActivity implements BaseViewListener,
         checkNetState();
 
         if(BuildConfig.DEBUG){ //日志开启
-            WindowUtil.showPopupWindow(this);
+//            WindowUtil.showPopupWindow(this);
         }
     }
 
@@ -161,7 +190,7 @@ public class BaseActivity extends SuperActivity implements BaseViewListener,
     }
 
     /**
-     * 显示fragment
+     * 添加fragment
      */
     protected void onAddSubFragment(BaseFragment fragment,
                                     boolean... isArrowState) {
@@ -178,7 +207,7 @@ public class BaseActivity extends SuperActivity implements BaseViewListener,
     }
 
     /**
-     * 显示fragment
+     * 替换fragment
      */
     protected void onReplaceFragment(BaseFragment fragment,
                                      boolean... isArrowState) {
@@ -240,7 +269,6 @@ public class BaseActivity extends SuperActivity implements BaseViewListener,
     public void onClick(int index, Object... obj) {
         //YOUMENG
     }
-
 
     @Override
     protected void stopLoading(boolean isSucc) {

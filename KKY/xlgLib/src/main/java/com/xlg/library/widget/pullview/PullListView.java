@@ -118,7 +118,7 @@ public class PullListView extends ListView implements IPullStateListener {
 
     public void hideFootView(){
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
-//            moreView.setVisibility(View.GONE);
+//            moreView.setVisibility(view.GONE);
             removeFooterView(footView);
         }
     }

@@ -7,7 +7,7 @@
     <io.github.leibnik.wechatradiobar.WeChatRadioGroup xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/radiogroup"
         android:layout_width="match_parent"
-        android:layout_height="53dp"
+        android:layout_height="@dimen/height_bottom_bar"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         >

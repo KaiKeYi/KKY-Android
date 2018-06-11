@@ -16,7 +16,7 @@ import com.xlg.library.widget.pullview.PullToRefreshLayout;
  * @Time: 2018/4/19 10:54
  * @Description:基类LinearLayout
  */
-public class BaseLinearLayout extends SuperLinearlayout implements View.OnClickListener {
+public class BaseView extends SuperView implements View.OnClickListener {
 
     private View mNetView;
     private BaseViewListener mListener;
@@ -40,7 +40,7 @@ public class BaseLinearLayout extends SuperLinearlayout implements View.OnClickL
         startLoading(isStart);
     }
 
-    public BaseLinearLayout(Context context) {
+    public BaseView(Context context) {
         super(context);
     }
 

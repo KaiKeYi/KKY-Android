@@ -83,7 +83,7 @@ public class WheelView extends View {
 	// The number of first item in layout
 	private int firstItem;
 
-	// View adapter
+	// view adapter
 	private WheelViewAdapter viewAdapter;
 	
 	// Recycle

@@ -11,7 +11,7 @@
     <dimen name="common_menu_title">13dp</dimen>
 
     <!-- 菜单中间字体大小 -->
-    <dimen name="common_menu_title_center">17dp</dimen>
+    <dimen name="common_menu_title_center">18dp</dimen>
 
     <!-- 页面里面菜单通用字体大小 -->
     <dimen name="common_menu_text_size">16dp</dimen>
@@ -28,11 +28,11 @@
     <!-- editText Item高度 -->
     <dimen name="common_edit_item_height">58dp</dimen>
 
-    <!-- title bar 高度 -->
-    <dimen name="height_top_bar">50dp</dimen>
+    <!-- top bar 高度 -->
+    <dimen name="height_top_bar">48dp</dimen>
 
-    <!-- title bar shade 高度 -->
-    <dimen name="height_top_bar_shade1">53dp</dimen>
+    <!-- bottom bar 高度 -->
+    <dimen name="height_bottom_bar">48dp</dimen>
 
     <dimen name="banner_heigth">260dp</dimen>
 

@@ -115,7 +115,7 @@ public class CustomDialog extends Dialog {
             btn.setTextColor(ResUtil.getColorById(android.R.color.white));
         }
 //		if (btnCount > 0) {
-//			View dividerView = new ImageView(this.getContext());
+//			view dividerView = new ImageView(this.getContext());
 //			dividerView.setBackgroundColor(R.color.color_line);
 //			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(1, LayoutParams.MATCH_PARENT);
 //			params.setMargins(0, Display.Dip2Px(10), 0, Display.Dip2Px(10));

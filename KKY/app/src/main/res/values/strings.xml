@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">开课易</string>
+
+    <string name="press_again_to_exit">再按一下，退出程序</string>
 </resources>

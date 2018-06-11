@@ -62,7 +62,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':xlgLib')
 
-    //如果不需要通过walle获取渠道号 则不需要加
-    implementation 'com.meituan.android.walle:library:1.1.6'
-    implementation 'com.github.leibnik:WechatRadioBar:1.2'
+    implementation 'com.meituan.android.walle:library:1.1.6' // walle打包
+    implementation 'com.github.leibnik:WechatRadioBar:1.2' // 仿微信底部切换卡
 }

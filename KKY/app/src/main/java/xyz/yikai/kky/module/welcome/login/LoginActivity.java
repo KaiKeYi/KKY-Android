@@ -1,4 +1,4 @@
-package xyz.yikai.kky.module.login;
+package xyz.yikai.kky.module.welcome.login;
 
 import xyz.yikai.kky.base.BaseActivity;
 
