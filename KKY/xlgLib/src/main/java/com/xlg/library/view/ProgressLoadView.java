@@ -80,7 +80,6 @@ public class ProgressLoadView extends ProgressBar {
 
 	};
 
-
 	/**
 	 * Start loading.
 	 *

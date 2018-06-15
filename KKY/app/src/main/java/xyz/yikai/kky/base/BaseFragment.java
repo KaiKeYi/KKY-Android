@@ -1,102 +1,127 @@
 package xyz.yikai.kky.base;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.os.Bundle;
+import android.provider.Settings;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.text.TextUtils;
+import android.util.DisplayMetrics;
 
 import com.xlg.library.R;
+import com.xlg.library.network.NetBroadCastReciver;
+import com.xlg.library.utils.ToastUtil;
 
 /**
- * @Author: Jason
- * @Time: 2018/4/19 10:54
- * @Description:基类Fragment
+ * 基类Fragment.
  */
-public abstract class BaseFragment extends SuperFragment {
+public class BaseFragment extends Fragment implements
+        BaseListener, NetBroadCastReciver.INetRevicerListener {
 
     /**
-     * 显示fragment
+     * 屏幕宽度.
      */
-    protected void onAddSubFragment(BaseFragment fragment,
-                                    boolean... isArrowState) {
+    protected int width;
+    /**
+     * 屏幕高度.
+     */
+    protected int height;
 
-        FragmentManager manager = getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
+    /**
+     * 网络监听器
+     */
+    private NetBroadCastReciver mNetReceiver;
 
-        transaction.replace(R.id.container, fragment).addToBackStack(null);
-        if (null != isArrowState && isArrowState.length > 0 && isArrowState[0]) {
-            transaction.commitAllowingStateLoss();
-        } else {
-            transaction.commit();
+    /**
+     * 网络是否连接.
+     */
+    public boolean isNetConnect=false;
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+
+        super.onActivityCreated(savedInstanceState);
+
+        // 检测网络状态
+        checkNetState();
+
+        // 获取屏幕宽高
+        getDisplay();
+    }
+
+    /**
+     * 检测网络状态.
+     */
+    private void checkNetState() {
+        mNetReceiver = new NetBroadCastReciver();
+        mNetReceiver.setNetRevicerListener(this, null);
+        IntentFilter mFilter = new IntentFilter();
+        mFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        getActivity().registerReceiver(mNetReceiver, mFilter);
+    }
+
+    /**
+     * 获取屏幕宽高.
+     */
+    private void getDisplay() {
+        DisplayMetrics metrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        width = metrics.widthPixels;
+        height = metrics.heightPixels;
+    }
+
+    /**
+     * 关闭Activity.
+     */
+    protected void finish() {
+        getActivity().finish();
+    }
+
+    @Override
+    public void onToggle() {
+
+    }
+
+    @Override
+    public void onSkipSet() {
+        getActivity().startActivity(new Intent(Settings.ACTION_SETTINGS));
+        getActivity().overridePendingTransition(R.anim.slide_in_right,
+                R.anim.slide_out_left);
+    }
+
+    @Override
+    public void onDestroy() {
+
+        super.onDestroy();
+        releaseNetObserver();
+    }
+
+    private void releaseNetObserver() {
+        if (null != mNetReceiver && null != getActivity()) {
+            getActivity().unregisterReceiver(mNetReceiver);
+            mNetReceiver = null;
         }
     }
 
-    /**
-     * 显示fragment
-     */
-    protected void onReplaceFragment(BaseFragment fragment,
-                                     boolean... isArrowState) {
-
-        FragmentManager manager = getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-
-        transaction.replace(R.id.container, fragment);
-        if (null != isArrowState && isArrowState.length > 0 && isArrowState[0]) {
-            transaction.commitAllowingStateLoss();
-        } else {
-            transaction.commit();
-        }
+    @Override
+    public void onNetReceiverSucc(Object data) {
+        isNetConnect=true;
     }
 
-    /**
-     * 回退栈顶
-     **/
-    protected void popBackStack() {
+    @Override
+    public void onNetReceiverFailure() {}
 
-        FragmentManager manager = getActivity().getSupportFragmentManager();
-        manager.popBackStack();
-
+    @Override
+    public void onTitleBarLeftClick() {
+        finish();
     }
 
-    public void setTitle(String title){
-        ((TextView) getActivity().findViewById(R.id.titileText))
-                .setText(title);
-    }
+    @Override
+    public void onTitleBarRightClick() {}
 
-    /**
-     * 设置标题信息
-     *
-     * @param listener
-     */
-    protected void setTitle(final ITitleListener listener, String... param) {
-
-        ((TextView) getActivity().findViewById(R.id.titileText))
-                .setText(param[0]);
-        View leftImage = getActivity().findViewById(R.id.backBtn);
-        leftImage.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                listener.onTitleBarLeftClick();
-            }
-        });
-        TextView rightText = (TextView) getActivity().findViewById(
-                R.id.attach_menu_Text);
-
-        if (null != param && param.length >= 2) {
-
-            rightText.setText(param[1]);
-            rightText.setOnClickListener(new OnClickListener() {
-
-                @Override
-                public void onClick(View arg0) {
-                    listener.onTitleBarRightClick();
-                }
-            });
-        }
-    }
-
-    public void onBackPressed(){}
-
+    @Override
+    public void onClick(int index, Object... obj) {}
 }

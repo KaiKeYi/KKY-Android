@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import xyz.yikai.kky.R;
-import xyz.yikai.kky.base.BaseFragment;
 import xyz.yikai.kky.module.mine.view.MineView;
-import xyz.yikai.kky.module.order.view.OrderView;
+import xyz.yikai.kky.base.BaseFragment;
 
 /**
  * The type Mine Fragment.

@@ -16,6 +16,7 @@ public class OrderView extends BaseView {
     public OrderView(View view, String title) {
         super(App.getAppContext());
 
-        setNavView(view,title);
+        setTitleView(view,title);
+        hideBackBtn();
     }
 }

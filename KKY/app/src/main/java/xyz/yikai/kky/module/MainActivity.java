@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 
 import com.xlg.library.helper.AppHelper;
 import com.xlg.library.utils.ToastUtil;
@@ -15,10 +14,10 @@ import java.util.List;
 import io.github.leibnik.wechatradiobar.WeChatRadioGroup;
 import xyz.yikai.kky.R;
 import xyz.yikai.kky.base.BaseActivity;
-import xyz.yikai.kky.base.BaseFragment;
 import xyz.yikai.kky.module.appointment.AppointmentFragment;
 import xyz.yikai.kky.module.mine.MineFragment;
 import xyz.yikai.kky.module.order.OrderFragment;
+import xyz.yikai.kky.base.BaseFragment;
 
 /**
  * The type Main Activity.

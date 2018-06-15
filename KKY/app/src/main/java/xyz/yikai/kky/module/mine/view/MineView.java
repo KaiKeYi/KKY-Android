@@ -16,6 +16,7 @@ public class MineView extends BaseView {
     public MineView(View view, String title) {
         super(App.getAppContext());
 
-        setNavView(view,title);
+        setTitleView(view,title);
+        hideBackBtn();
     }
 }

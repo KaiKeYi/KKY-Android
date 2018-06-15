@@ -16,6 +16,7 @@ public class AppointmentView extends BaseView {
     public AppointmentView(View view, String title) {
         super(App.getAppContext());
 
-        setNavView(view,title);
+        setTitleView(view,title);
+        hideBackBtn();
     }
 }

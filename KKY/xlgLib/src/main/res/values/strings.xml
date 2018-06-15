@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppLib</string>
+    <string name="app_name">xlgLib</string>
     <string name="confirm">确认</string>
     <string name="cancel">取消</string>
     <string name="notice">提示</string>

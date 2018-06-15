@@ -2,9 +2,10 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/titleTopView"
+    android:id="@+id/ll_title_bar"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/height_top_bar"
+    android:layout_height="@dimen/height_nav_bar"
+    android:layout_marginTop="@dimen/height_status_bar"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -13,7 +14,7 @@
         android:background="@color/app_title_bg">
 
         <FrameLayout
-            android:id="@+id/backBtn"
+            android:id="@+id/fl_back"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
@@ -21,7 +22,7 @@
             android:visibility="visible">
 
             <ImageView
-                android:id="@+id/image_left"
+                android:id="@+id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -31,31 +32,31 @@
         </FrameLayout>
 
         <TextView
-            android:id="@+id/titileText"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
             android:textColor="@color/app_title_color"
-            android:textSize="@dimen/common_menu_title_center"
+            android:textSize="18sp"
             tools:text="登录" />
 
         <FrameLayout
-            android:id="@+id/attach_menu_frame"
+            android:id="@+id/fl_attach_menu"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:paddingRight="@dimen/common_padding_top">
+            android:paddingRight="25dp">
 
             <TextView
-                android:id="@+id/attach_menu_Text"
+                android:id="@+id/tv_attach_menu"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center_vertical|right"
                 android:gravity="center"
                 android:textColor="@color/app_theme_color"
-                android:textSize="@dimen/common_menu_title" />
+                android:textSize="13sp" />
         </FrameLayout>
     </RelativeLayout>
 

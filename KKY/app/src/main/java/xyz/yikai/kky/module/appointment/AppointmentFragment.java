@@ -5,11 +5,10 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
 import xyz.yikai.kky.R;
 import xyz.yikai.kky.base.BaseFragment;
 import xyz.yikai.kky.module.appointment.view.AppointmentView;
-import xyz.yikai.kky.module.mine.view.MineView;
 
 /**
  * The type Appointment Fragment.
